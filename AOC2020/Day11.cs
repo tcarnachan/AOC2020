@@ -22,16 +22,8 @@ namespace AOC2020
             while (true)
             {
                 char[][] temp = ApplyRules(checkFirst, tolerance);
-                bool unchanged = true;
-                for (int i = 0; i < temp.Length; i++)
-                {
-                    if (!temp[i].SequenceEqual(copy[i]))
-                    {
-                        unchanged = false;
-                        break;
-                    }
-                }
-                if (unchanged) return temp.Select(r => r.Count(c => c == '#')).Sum();
+                if (temp.Zip(copy, (a, b) => a.SequenceEqual(b)).All(b => b))
+                    return temp.Select(r => r.Count(c => c == '#')).Sum();
                 copy = temp;
             }
         }
