@@ -10,7 +10,7 @@ namespace AOC2020
     {
         public static void Main()
         {
-            Solution solution = new Day12();
+            Solution solution = new Day13();
 
             Stopwatch sw = Stopwatch.StartNew();
             long res = solution.RunSilver();
