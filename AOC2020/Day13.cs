@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day13 : Solution
+    public class Day13 : Solution<long>
     {
         string[] buses;
         int departTime;

@@ -10,10 +10,10 @@ namespace AOC2020
     {
         public static void Main()
         {
-            Solution solution = new Day13();
+            var solution = new Day13();
 
             Stopwatch sw = Stopwatch.StartNew();
-            long res = solution.RunSilver();
+            var res = solution.RunSilver();
             sw.Stop();
             Console.WriteLine($"Part 1: {res} | Executed in {sw.ElapsedMilliseconds}ms");
 
@@ -24,10 +24,10 @@ namespace AOC2020
         }
     }
 
-    public abstract class Solution
+    public abstract class Solution<T>
     {
-        public abstract long RunSilver();
-        public abstract long RunGold();
+        public abstract T RunSilver();
+        public abstract T RunGold();
     }
 
     class InputReader
@@ -84,7 +84,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2020
 {
-    public class DayXX : Solution
+    public class DayXX : Solution<long>
     {
         public DayXX()
         {

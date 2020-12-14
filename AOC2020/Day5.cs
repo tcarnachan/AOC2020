@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AOC2020
 {
-    public class Day5 : Solution
+    public class Day5 : Solution<int>
     {
         HashSet<int> seats = new HashSet<int>();
 
@@ -14,12 +14,12 @@ namespace AOC2020
                 seats.Add(pass.Select(c => "FL".Contains(c) ? 0 : 1).Aggregate(0, (prod, x) => 2 * prod + x));
         }
 
-        public override long RunSilver()
+        public override int RunSilver()
         {
             return seats.Max();
         }
 
-        public override long RunGold()
+        public override int RunGold()
         {
             for (int i = 1; i < seats.Max(); i++)
             {

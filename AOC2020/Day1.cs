@@ -1,9 +1,8 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AOC2020
 {
-    public class Day1 : Solution
+    public class Day1 : Solution<int>
     {
         int[] nums;
         HashSet<int> set;
@@ -15,13 +14,13 @@ namespace AOC2020
             set = new HashSet<int>(nums);
         }
 
-        public override long RunSilver()
+        public override int RunSilver()
         {
             foreach(int n in nums) if (set.Contains(2020 - n)) return n * (2020 - n);
             return -1;
         }
 
-        public override long RunGold()
+        public override int RunGold()
         {
             for(int i = 0; i < nums.Length; i++)
             {

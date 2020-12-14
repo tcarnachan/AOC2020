@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day12 : Solution
+    public class Day12 : Solution<int>
     {
         string[] instructions;
 
@@ -12,7 +12,7 @@ namespace AOC2020
             instructions = ir.GetInput('\n');
         }
 
-        public override long RunSilver()
+        public override int RunSilver()
         {
             (int x, int y) pos = (0, 0), dir = (1, 0);
 
@@ -38,7 +38,7 @@ namespace AOC2020
             return (x * cos - y * sin, y * cos + x * sin);
         }
 
-        public override long RunGold()
+        public override int RunGold()
         {
             (int x, int y) ship = (0, 0), wpt = (10, 1);
 

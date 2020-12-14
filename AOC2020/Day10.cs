@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AOC2020
 {
-    public class Day10 : Solution
+    public class Day10 : Solution<long>
     {
         int[] adapters;
 

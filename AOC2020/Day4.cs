@@ -1,9 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace AOC2020
 {
-    public class Day4 : Solution
+    public class Day4 : Solution<int>
     {
         string[] fields = new string[] { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
         string[] passports;
@@ -14,12 +13,12 @@ namespace AOC2020
             passports = ir.GetInput("\n\n");
         }
 
-        public override long RunSilver()
+        public override int RunSilver()
         {
             return passports.Count(p => fields.All(f => p.Split().Any(pfield => pfield.StartsWith(f))));
         }
 
-        public override long RunGold()
+        public override int RunGold()
         {
             return passports.Count(p => fields.All(f => VerifyField(f, p.Split())));
         }

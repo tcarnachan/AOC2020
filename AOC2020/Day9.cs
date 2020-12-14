@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day9 : Solution
+    public class Day9 : Solution<long>
     {
         long[] nums;
         int preamble = 25;

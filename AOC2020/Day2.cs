@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2020
 {
-    public class Day2 : Solution
+    public class Day2 : Solution<int>
     {
         string[] input;
         Regex rx = new Regex(@"(\d\d?)-(\d\d?)\s(\w):\s(\w+)", RegexOptions.Compiled);
@@ -14,7 +14,7 @@ namespace AOC2020
             input = ir.GetInput('\n');
         }
 
-        public override long RunSilver()
+        public override int RunSilver()
         {
             int valid = 0;
             foreach(string line in input)
@@ -27,7 +27,7 @@ namespace AOC2020
             return valid;
         }
 
-        public override long RunGold()
+        public override int RunGold()
         {
             int valid = 0;
             foreach (string line in input)

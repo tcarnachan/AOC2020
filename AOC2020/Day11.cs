@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day11 : Solution
+    public class Day11 : Solution<int>
     {
         char[][] seats, copy;
 
@@ -12,9 +12,9 @@ namespace AOC2020
             seats = ir.GetInput('\n').Select(line => line.ToCharArray()).ToArray();
         }
 
-        public override long RunSilver() => GetOccupiedSeats(true, 4);
+        public override int RunSilver() => GetOccupiedSeats(true, 4);
 
-        public override long RunGold() => GetOccupiedSeats(false, 5);
+        public override int RunGold() => GetOccupiedSeats(false, 5);
 
         private int GetOccupiedSeats(bool checkFirst, int tolerance)
         {

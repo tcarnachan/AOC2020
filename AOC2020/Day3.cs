@@ -1,6 +1,6 @@
 ﻿namespace AOC2020
 {
-    public class Day3 : Solution
+    public class Day3 : Solution<long>
     {
         string[] map;
 

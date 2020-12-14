@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day8 : Solution
+    public class Day8 : Solution<int>
     {
         string[] program;
 
@@ -12,7 +12,7 @@ namespace AOC2020
             program = ir.GetInput('\n');
         }
 
-        public override long RunSilver()
+        public override int RunSilver()
         {
             int pc = 0, accumulator = 0;
             HashSet<int> prev = new HashSet<int>();
@@ -20,7 +20,7 @@ namespace AOC2020
             return accumulator;
         }
 
-        public override long RunGold()
+        public override int RunGold()
         {
             List<(string, int)> ops = new List<(string, int)>();
             for (int i = 0; i < program.Length; i++)
