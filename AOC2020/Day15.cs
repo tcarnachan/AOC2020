@@ -1,11 +1,10 @@
 ﻿using System.Linq;
-using System.Collections.Generic;
 
 namespace AOC2020
 {
     public class Day15 : Solution<int>
     {
-        Dictionary<int, int> lastSaid = new Dictionary<int, int>();
+        int[] lastSaid = new int[30000000]; // Turns out to be roughly 5x faster than using a dictionary
         int currTurn = 1, prevNum, next;
 
         public Day15()
@@ -24,7 +23,7 @@ namespace AOC2020
         {
             for (; currTurn < maxTurns; currTurn++)
             {
-                if (lastSaid.ContainsKey(prevNum)) next = currTurn - lastSaid[prevNum];
+                if (lastSaid[prevNum] != 0) next = currTurn - lastSaid[prevNum];
                 else next = 0;
                 lastSaid[prevNum] = currTurn;
                 prevNum = next;
