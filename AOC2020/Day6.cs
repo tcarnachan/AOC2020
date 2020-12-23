@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day6 : Solution<int>
+    public class Day6
     {
         string[] groups;
 
@@ -12,12 +12,12 @@ namespace AOC2020
             groups = ir.GetInput("\n\n");
         }
 
-        public override int RunSilver()
+        public int RunSilver()
         {
             return groups.Select(g => g.Replace("\n", "").Distinct().Count()).Sum(); ;
         }
 
-        public override int RunGold()
+        public int RunGold()
         {
             var alphabet = Enumerable.Range('a', 26).Select(i => (char)i);
             return groups.Select(g => alphabet.Count(c => g.Split('\n').All(p => p.Contains(c)))).Sum();

@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day4 : Solution<int>
+    public class Day4
     {
         string[] fields = new string[] { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
         string[] passports;
@@ -13,12 +13,12 @@ namespace AOC2020
             passports = ir.GetInput("\n\n");
         }
 
-        public override int RunSilver()
+        public int RunSilver()
         {
             return passports.Count(p => fields.All(f => p.Split().Any(pfield => pfield.StartsWith(f))));
         }
 
-        public override int RunGold()
+        public int RunGold()
         {
             return passports.Count(p => fields.All(f => VerifyField(f, p.Split())));
         }

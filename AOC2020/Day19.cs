@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2020
 {
-    public class Day19 : Solution<int>
+    public class Day19
     {
         Dictionary<string, string> rules = new Dictionary<string, string>();
         string[] messages;
@@ -24,7 +24,7 @@ namespace AOC2020
             messages = input[1].Split('\n');
         }
 
-        public override int RunSilver()
+        public int RunSilver()
         {
             Regex rx = new Regex($"^{GetRegex("0")}$");
             return messages.Count(m => rx.IsMatch(m));
@@ -43,7 +43,7 @@ namespace AOC2020
             return string.Concat(rule.Split(' ').Select(p => GetRegex(p)));
         }
 
-        public override int RunGold()
+        public int RunGold()
         {
             // Hacky solution by just assuming recursion depth is small
             rules["8"] = string.Join(" | ", Enumerable.Range(1, 5).Select(i => string.Join(" ", Enumerable.Repeat("42", i))));

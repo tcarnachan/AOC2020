@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day13 : Solution<long>
+    public class Day13
     {
         string[] buses;
         int departTime;
@@ -17,7 +17,7 @@ namespace AOC2020
             Array.Copy(inp, 1, buses, 0, buses.Length);
         }
 
-        public override long RunSilver()
+        public long RunSilver()
         {
             int busID = -1, time = int.MaxValue;
             foreach(string bus in buses)
@@ -30,7 +30,7 @@ namespace AOC2020
             return busID * (time - departTime);
         }
 
-        public override long RunGold()
+        public long RunGold()
         {
             long start = long.Parse(buses[0]), delta = start, bus;
             for(int i = 1; i < buses.Length; i++)

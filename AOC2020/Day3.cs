@@ -1,6 +1,6 @@
 ﻿namespace AOC2020
 {
-    public class Day3 : Solution<long>
+    public class Day3
     {
         string[] map;
 
@@ -10,12 +10,12 @@
             map = ir.GetInput('\n');
         }
 
-        public override long RunSilver()
+        public long RunSilver()
         {
             return GetTrees(3, 1);
         }
 
-        public override long RunGold()
+        public long RunGold()
         {
             return GetTrees(1, 1) * GetTrees(3, 1) * GetTrees(5, 1) * GetTrees(7, 1) * GetTrees(1, 2);
         }

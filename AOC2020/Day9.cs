@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day9 : Solution<long>
+    public class Day9
     {
         long[] nums;
         int preamble = 25;
@@ -13,7 +13,7 @@ namespace AOC2020
             nums = ir.GetLongArray();
         }
 
-        public override long RunSilver()
+        public long RunSilver()
         {
             for(int nextVal = preamble; nextVal < nums.Length; nextVal++)
             {
@@ -31,7 +31,7 @@ namespace AOC2020
             return -1;
         }
 
-        public override long RunGold()
+        public long RunGold()
         {
             long target = RunSilver(), runningSum = 0;
             int start = 0, end;

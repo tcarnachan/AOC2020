@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2020
 {
-    public class Day14 : Solution<ulong>
+    public class Day14
     {
         string mask;
         Dictionary<ulong, ulong> mem = new Dictionary<ulong, ulong>();
@@ -18,7 +18,7 @@ namespace AOC2020
             program = ir.GetInput('\n');
         }
 
-        public override ulong RunSilver()
+        public ulong RunSilver()
         {
             foreach(string line in program)
             {
@@ -40,7 +40,7 @@ namespace AOC2020
             return mem.Values.Aggregate((a, b) => a + b);
         }
 
-        public override ulong RunGold()
+        public ulong RunGold()
         {
             mem.Clear();
             foreach (string line in program)

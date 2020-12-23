@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2020
 {
-    public class Day16 : Solution<long>
+    public class Day16
     {
         Regex fieldRx = new Regex(@"(.*):\s(\d*)-(\d*)\sor\s(\d*)-(\d*)");
 
@@ -33,7 +33,7 @@ namespace AOC2020
                 tickets.Add(ticketStrs[i].Split(',').Select(int.Parse).ToArray());
         }
 
-        public override long RunSilver()
+        public long RunSilver()
         {
             int invalidCount = 0;
             for(int i = 0; i < tickets.Count; i++)
@@ -54,7 +54,7 @@ namespace AOC2020
             return invalidCount;
         }
 
-        public override long RunGold()
+        public long RunGold()
         {
             List<int>[] validFields = new List<int>[fieldNames.Count];
             for(int i = 0; i < fieldNames.Count; i++)

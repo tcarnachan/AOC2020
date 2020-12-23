@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AOC2020
 {
-    public class Day18 : Solution<long>
+    public class Day18
     {
         string[][] expressions;
         public Day18()
@@ -14,9 +14,9 @@ namespace AOC2020
             expressions = t.Select(s => s.Replace("(", "( ").Replace(")", " )").Split(' ')).ToArray();
         }
 
-        public override long RunSilver() => expressions.Select(t => EvaluateExpression(t, Calc1)).Sum();
+        public long RunSilver() => expressions.Select(t => EvaluateExpression(t, Calc1)).Sum();
 
-        public override long RunGold() => expressions.Select(t => EvaluateExpression(t, Calc2)).Sum();
+        public long RunGold() => expressions.Select(t => EvaluateExpression(t, Calc2)).Sum();
 
         private long EvaluateExpression(string[] expression, Func<string[], long> Evaluate)
         {

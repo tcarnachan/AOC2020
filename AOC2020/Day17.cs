@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AOC2020
 {
-    public class Day17 : Solution<int>
+    public class Day17
     {
         Dictionary<(int x, int y, int z, int w), bool> cubes = new Dictionary<(int, int, int, int), bool>();
 
@@ -25,7 +25,7 @@ namespace AOC2020
             }
         }
 
-        public override int RunSilver()
+        public int RunSilver()
         {
             for (int i = 0; i < 6; i++)
                 SimulateCycle(false);
@@ -88,7 +88,7 @@ namespace AOC2020
                 cubes[pos] = !cubes[pos];
         }
 
-        public override int RunGold()
+        public int RunGold()
         {
             LoadCubes();
             for (int i = 0; i < 6; i++)

@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day15 : Solution<int>
+    public class Day15
     {
         int[] lastSaid = new int[30000000]; // Turns out to be roughly 5x faster than using a dictionary
         int currTurn = 1, prevNum, next;
@@ -15,9 +15,9 @@ namespace AOC2020
             prevNum = input.Last();
         }
 
-        public override int RunSilver() => PlayGame(2020);
+        public int RunSilver() => PlayGame(2020);
 
-        public override int RunGold() => PlayGame(30000000);
+        public int RunGold() => PlayGame(30000000);
 
         private int PlayGame(int maxTurns)
         {

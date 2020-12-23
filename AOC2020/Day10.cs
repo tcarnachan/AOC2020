@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AOC2020
 {
-    public class Day10 : Solution<long>
+    public class Day10
     {
         int[] adapters;
 
@@ -15,7 +15,7 @@ namespace AOC2020
             Array.Sort(adapters);
         }
 
-        public override long RunSilver()
+        public long RunSilver()
         {
             int[] diff = new int[4];
             for (int i = 1; i < adapters.Length; i++) diff[adapters[i] - adapters[i - 1]]++;
@@ -25,7 +25,7 @@ namespace AOC2020
 
         Dictionary<int, long> memo = new Dictionary<int, long>();
 
-        public override long RunGold()
+        public long RunGold()
         {
             memo[0] = 1;
             return CountArrangements(adapters.Last() + 3);

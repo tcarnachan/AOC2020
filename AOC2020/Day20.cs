@@ -72,7 +72,7 @@ namespace AOC2020
         }
     }
 
-    public class Day20 : Solution<long>
+    public class Day20
     {
         List<Tile> tiles = new List<Tile>();
         Tile[,] image;
@@ -90,7 +90,7 @@ namespace AOC2020
             }
         }
 
-        public override long RunSilver()
+        public long RunSilver()
         {
             int dim = (int)Math.Sqrt(tiles.Count);
             image = new Tile[dim, dim];
@@ -130,7 +130,7 @@ namespace AOC2020
             );
         }
 
-        public override long RunGold()
+        public long RunGold()
         {
             List<string> img = new List<string>();
             int dim = image[0, 0].data.Length - 2;

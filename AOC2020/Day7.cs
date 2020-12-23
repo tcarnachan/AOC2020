@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2020
 {
-    public class Day7 : Solution<int>
+    public class Day7
     {
         Dictionary<string, Dictionary<string, int>> contains = new Dictionary<string, Dictionary<string, int>>();
         static string myBag = "shiny gold";
@@ -29,7 +29,7 @@ namespace AOC2020
             }
         }
 
-        public override int RunSilver()
+        public int RunSilver()
         {
             Queue<string> queue = new Queue<string>(new string[] { myBag });
             HashSet<string> seen = new HashSet<string>() { myBag };
@@ -42,7 +42,7 @@ namespace AOC2020
             return seen.Count - 1;
         }
 
-        public override int RunGold()
+        public int RunGold()
         {
             Queue<string> queue = new Queue<string>(new string[] { myBag });
             int count = 0;

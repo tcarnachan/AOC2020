@@ -2,7 +2,7 @@
 
 namespace AOC2020
 {
-    public class Day1 : Solution<int>
+    public class Day1
     {
         int[] nums;
         HashSet<int> set;
@@ -14,13 +14,13 @@ namespace AOC2020
             set = new HashSet<int>(nums);
         }
 
-        public override int RunSilver()
+        public int RunSilver()
         {
             foreach(int n in nums) if (set.Contains(2020 - n)) return n * (2020 - n);
             return -1;
         }
 
-        public override int RunGold()
+        public int RunGold()
         {
             for(int i = 0; i < nums.Length; i++)
             {
