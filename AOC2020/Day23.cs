@@ -14,7 +14,7 @@ namespace AOC2020
 
         public long RunSilver()
         {
-            Dictionary<int, int> lookup = Simulate(9, 100);
+            int[] lookup = Simulate(9, 100);
             int num = lookup[1];
             while (lookup[num % 10] != 1) num = num * 10 + lookup[num % 10];
             return num;
@@ -23,13 +23,13 @@ namespace AOC2020
         public long RunGold()
         {
             cups.AddRange(Enumerable.Range(10, 999991));
-            Dictionary<int, int> lookup = Simulate(1000000, 10000000);
+            int[] lookup = Simulate(1000000, 10000000);
             return (long)lookup[1] * lookup[lookup[1]];
         }
 
-        private Dictionary<int, int> Simulate(int max, int iters)
+        private int[] Simulate(int max, int iters)
         {
-            Dictionary<int, int> nextVal = new Dictionary<int, int>();
+            int[] nextVal = new int[max + 1];
             for (int i = 0; i < cups.Count; i++) nextVal[cups[i]] = cups[(i + 1) % cups.Count];
 
             int current = cups[0];
