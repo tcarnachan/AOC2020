@@ -32,24 +32,25 @@ namespace AOC2020
             int[] nextVal = new int[max + 1];
             for (int i = 0; i < cups.Count; i++) nextVal[cups[i]] = cups[(i + 1) % cups.Count];
 
-            int current = cups[0];
+            int curr = cups[0];
             for (int i = 0; i < iters; i++)
             {
-                int[] temp = new int[] { nextVal[current], nextVal[nextVal[current]], nextVal[nextVal[nextVal[current]]] };
-                int destination = current;
+                int t0 = nextVal[curr], t1 = nextVal[t0], t2 = nextVal[t1];
+                int dest = curr;
                 do
                 {
-                    destination--;
-                    if (destination <= 0) destination = max;
-                } while (temp.Contains(destination));
+                    dest--;
+                    if (dest <= 0) dest = max;
+                } while (dest == t0 || dest == t1 || dest == t2);
 
-                int t = nextVal[destination];
-                nextVal[destination] = temp[0];
-                nextVal[current] = nextVal[temp[2]];
-                nextVal[temp[2]] = t;
+                int t = nextVal[dest];
+                nextVal[dest] = t0;
+                nextVal[curr] = nextVal[t2];
+                nextVal[t2] = t;
 
-                current = nextVal[current];
+                curr = nextVal[curr];
             }
+
             return nextVal;
         }
     }
