@@ -58,6 +58,7 @@
     <Compile Include="Day22.cs" />
     <Compile Include="Day23.cs" />
     <Compile Include="Day24.cs" />
+    <Compile Include="Day25.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
