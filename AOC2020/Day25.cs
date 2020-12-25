@@ -1,9 +1,10 @@
-﻿namespace AOC2020
+﻿using System.Numerics;
+
+namespace AOC2020
 {
     public class Day25
     {
         int[] keys;
-        int subjNo = 7;
 
         public Day25()
         {
@@ -14,10 +15,8 @@
         public long RunSilver()
         {
             long loop, t = 1;
-            for (loop = 0; t != keys[0]; loop++) t = (t * subjNo) % 20201227;
-            (subjNo, t) = (keys[1], 1);
-            for (int i = 0; i < loop; i++) t = (t * subjNo) % 20201227;
-            return t;
+            for (loop = 0; t != keys[0]; loop++) t = (t * 7) % 20201227;
+            return (long)BigInteger.ModPow(keys[1], loop, 20201227);
         }
 
         public string RunGold() => "No puzzle";
